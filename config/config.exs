@@ -45,7 +45,8 @@ config :spark,
 
 config :cinder_showcase,
   ecto_repos: [CinderShowcase.Repo],
-  generators: [timestamp_type: :utc_datetime]
+  generators: [timestamp_type: :utc_datetime],
+  ash_domains: [CinderShowcase.Showcase]
 
 # Configures the endpoint
 config :cinder_showcase, CinderShowcaseWeb.Endpoint,
