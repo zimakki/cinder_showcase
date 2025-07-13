@@ -53,6 +53,17 @@ defmodule CinderShowcaseWeb do
       use Phoenix.LiveView
 
       unquote(html_helpers())
+      
+      @impl true
+      def handle_params(params, url, socket) do
+        uri = URI.parse(url)
+        {:noreply, socket |> assign(:current_path, uri.path) |> handle_params_impl(params, url)}
+      end
+      
+      # Default implementation, can be overridden
+      def handle_params_impl(socket, _params, _url), do: socket
+      
+      defoverridable handle_params: 3, handle_params_impl: 3
     end
   end
 

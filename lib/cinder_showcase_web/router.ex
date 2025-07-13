@@ -17,7 +17,23 @@ defmodule CinderShowcaseWeb.Router do
   scope "/", CinderShowcaseWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", HomeLive.Index, :index
+    
+    # Table Examples
+    live "/tables", TableExamplesLive.Index, :index
+    live "/tables/users", TableExamplesLive.Users, :index
+    live "/tables/departments", TableExamplesLive.Departments, :index
+    live "/tables/projects", TableExamplesLive.Projects, :index
+    live "/tables/posts", TableExamplesLive.Posts, :index
+    
+    # Theme Gallery
+    live "/themes", ThemeGalleryLive.Index, :index
+    
+    # Advanced Features
+    live "/advanced", AdvancedFeaturesLive.Index, :index
+    live "/advanced/filtering", AdvancedFeaturesLive.Filtering, :index
+    live "/advanced/relationships", AdvancedFeaturesLive.Relationships, :index
+    live "/advanced/realtime", AdvancedFeaturesLive.Realtime, :index
   end
 
   # Other scopes may use custom stacks.
