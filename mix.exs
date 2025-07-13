@@ -41,6 +41,7 @@ defmodule CinderShowcase.MixProject do
       {:ash_phoenix, "~> 2.0"},
       {:ash, "~> 3.0"},
       {:cinder, "~> 0.4"},
+      {:number, "~> 1.0"},
       {:igniter, "~> 0.6", only: [:dev, :test]},
       {:phoenix, "~> 1.8.0-rc.3", override: true},
       {:phoenix_ecto, "~> 4.5"},
